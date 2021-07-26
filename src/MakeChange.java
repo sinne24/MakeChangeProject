@@ -9,8 +9,10 @@ public class MakeChange {
 		
 		System.out.println("Please enter the price of the item:");
 		price = kb.nextDouble();
+		System.out.println("Price entered: $" + price);
 		System.out.println("Please enter the amount tendered:");
 		amountTendered= kb.nextDouble();
+		System.out.println("Amount tendered: $" + amountTendered);
 		
 		// Determine if amount tendered is enough. too much, or exactly the price
 		if (amountTendered < price) {
@@ -34,7 +36,8 @@ public class MakeChange {
 			
 			change = amountTendered - price;
 			
-			System.out.print("Your change is $" + change + ". ");
+			System.out.printf("Your change is $" + "%.2f",change);
+			System.out.println(". ");
 			
 			// Determine change in dollar bills:
 		    if (change % 20 == 0){
@@ -123,13 +126,13 @@ public class MakeChange {
 				
 			}
 		    if (change / 1 == 0){
-				System.out.print(" one penny, ");
+				System.out.print(" one penny");
 				change = change - 1;
 				
 			} 
 			else if (change / 1 > 0) {
 				pennies = (int)(change/1);
-				System.out.print(pennies + " pennies, ");
+				System.out.print(pennies + " pennies");
 				change = change - (pennies * 1);
 				
 			}		
